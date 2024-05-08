@@ -1,0 +1,45 @@
+import registroProduccion.*
+
+test "El 49 está em la producción" {
+	assert.that(registroProduccion.algunDiaSeProdujo(49))
+}
+
+test "El 52 no está en la producción" {
+	assert.notThat(registroProduccion.algunDiaSeProdujo(52))
+}
+
+test "El 62 es el máximo valor de producción"{
+	assert.equals(62, registroProduccion.maximoValorDeProduccion())
+}
+
+test "Los valores de producción que son pares son 18 y 62"{
+	assert.equals([18, 62], registroProduccion.valoresDeProduccionPares())
+}
+
+test "La producción entre 10 y 100 es verdadera"{
+	assert.that(registroProduccion.produccionEsAcotada(10, 100))
+}
+
+test "La producción entre 20 y 100 es falsa porque 18 no està en el rango"{
+	assert.notThat(registroProduccion.produccionEsAcotada(20,100))
+}
+
+test "Las producciones de 43,49, 62 y 39 son superiores a 35"{
+	assert.equals([43, 49, 62, 39], registroProduccion.produccionesSuperioresA(35))
+}
+
+test "Le suma el valor 5 a todas las producciones"{
+	assert.equals([48, 23, 54, 67, 38, 44], registroProduccion.produccionesSumando(5))
+}
+
+test "La suma total de todas las producciones es 244"{
+	assert.equals(244, registroProduccion.totalProducido())
+}
+
+test "El ultimo valor producido es 39"{
+	assert.equals(39, registroProduccion.ultimoValorDeProduccion())
+}
+
+test "La cantidad de producciones que son mayores a la primera que en este caso, es 43 la primera producción son 2(43 y 62)"{
+	assert.equals(2, registroProduccion.cantidadProduccionesMayorALaPrimera())
+}
